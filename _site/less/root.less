@@ -1,0 +1,149 @@
+
+/* Layout */
+//@1col: ( 1 * (@column + @gutter) - @gutter) / @em;
+
+/** Functions **/
+.col(@cols) {
+    //width: (@cols * ((@column + @gutter) + (-@gutter))) / @em;
+    //width: (((@cols * (@column + @gutter)) - @gutter) / @em) * @cols;
+    width: (@cols * (@column + @gutter)) - @gutter / @em;
+}
+
+.gutter-top { padding-top: @gutter; }
+.gutter-right { padding-right: @gutter; }
+.gutter-bottom { padding-bottom: @gutter; }
+.gutter-left { padding-left: @gutter; }
+
+.gutter {
+  .gutter-top;
+  .gutter-right;
+  .gutter-bottom;
+  .gutter-left;
+}
+
+.margin-gutter-top      { margin-top   : @gutter; }
+.margin-gutter-right    { margin-right : @gutter; }
+.margin-gutter-bottom   { margin-bottom: @gutter; }
+.margin-gutter-left     { margin-left  : @gutter; }
+
+.margin-gutter {
+  .margin-gutter-top;
+  .margin-gutter-right;
+  .margin-gutter-bottom;
+  .margin-gutter-left;
+}
+
+.no-width {
+  width: 100%;
+}
+
+.width(@width) {
+  width: @width;
+}
+
+.width-auto(@font-size) {
+  @gutter: @font-size * 1.5;
+  @column: @gutter * 1.5;
+  
+  width: (@column * 12) + (@gutter * 12);
+}
+
+.height(@height) {
+  height: @height;
+}
+
+.line-height(@font-size) {
+  line-height: @font-size * @line-height;
+}
+
+.center {
+  .center(@page-width);
+}
+
+.center(@page-width) {
+  width: @page-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inline-left {
+  float: left;
+}
+
+.inline-right { 
+  float: right;
+}
+
+.inline-box {
+  display: inline-box;
+}
+
+.inline {
+  .inline-left;
+}
+
+.clear {
+  clear: both;
+}
+
+.display(@type) {
+  display: @type;
+}
+
+.hidden        { display: none; }
+.ontop         { z-index: 9; }
+.onmiddle      { z-index: 6; }
+.onbottom      { z-index: 3; }
+.onbottomtotal { z-index: -99999; }
+.ontoptotal    { z-index: 99999; }
+
+@line-height: 1.875;
+@font-size: 16px;
+@em: @font-size*1em;
+
+@gutter: @font-size * 1.5;
+@column: (@gutter * 1.5);
+@page-width: (@column * 12) + (@gutter * 12);
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url('http://localhost:4000/fonts/Entypo.css');
+@import "animations.less";
+@import "prism.less";
+@import "visuals.less";
+
+@max: 1920px;
+@normal: 1280px;
+@low: 768px;
+
+@media screen and (min-width: @low) {
+  @page-width: 100%;
+  
+  body {
+    .center(100%);
+  }
+  
+  .main(@page-width, 100%);
+}
+
+@media screen and (min-width: @normal) {
+  @page-width: @normal;
+  @cont-width: 960px;
+  
+  body {
+    .center(960px);
+  }
+  
+  .main(@page-width, @cont-width);
+}
+
+@media screen and (min-width: @max) {
+  @page-width: @max;
+  @cont-width: 1440px;
+  
+  body {
+    .center(1440px);
+  }
+  
+  .main(@page-width, @cont-width);
+}
