@@ -1,8 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
-
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
-
-@import url('http://localhost:4000/fonts/Entypo.css');
 /* Layout */
 /** Functions **/
 .gutter-top {
@@ -55,11 +50,11 @@
 .inline-right {
   float: right;
 }
-.inline-box {
-  display: inline-box;
+.inline-block {
+  display: inline-block;
 }
 .inline {
-  float: left;
+  display: inline;
 }
 .clear {
   clear: both;
@@ -82,132 +77,64 @@
 .ontoptotal {
   z-index: 99999;
 }
-/**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
- */
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #f8f8f2;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  direction: ltr;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+@font-face {
+  font-family: 'icons';
+  src: url("font/icons.eot");
+  src: url("font/icons.eot?#iefix") format("embedded-opentype"), url(data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAVQAA0AAAAABwwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABoAAAAcZvEE1EdERUYAAAFMAAAAHwAAACAANgAGT1MvMgAAAWwAAABHAAAAVi+63B9jbWFwAAABtAAAAEUAAAFS4B3z02dhc3AAAAH8AAAACAAAAAj//wADZ2x5ZgAAAgQAAAGSAAABvC0bynhoZWFkAAADmAAAAC4AAAA2+9KiwWhoZWEAAAPIAAAAHgAAACQEEP/qaG10eAAAA+gAAAAdAAAAJAyqAL1sb2NhAAAECAAAABQAAAAUAbYCBG1heHAAAAQcAAAAHQAAACAATQA9bmFtZQAABDwAAADZAAABa61eK+lwb3N0AAAFGAAAADUAAABkz/m6sXicY2BgYGQAgjO2i86D6LORG5lgNABH3QYuAAB4nGNgZGBg4ANiCQYQYGJgZGBm4ACSLGAeAwAEvAA9AHicY2BkYmCcwMDKwMHow5jGwMDgDqW/MkgytDAwMDGwMjPAgQCCyRCQ5prC4PCA4QMD44P/Dxj0GB8wKDQwMDCC5ACX3AvcAHicY2BgYGaAYBkGRgYQ8AHyGMF8FgYDIM0BhEwgiQcsHxj+/wezGCAsBWYBDqguMGBkY4BzGUF6mBhQASPDsAcA3CsIwAAAAAAAAAH//wACeJwVULGO00AUfM/O2mtvzsGX7C1cwHFi5JxsMNibzV4AJQKSJiXSKdKFkztOdxUKHwAllNQUdy1fQ0WfgpofQAQ2zRuNNPPevAGEHEr8id9gAqBlNdaDdPgcC1RH0ozRWEcoU4OyEtXU0oHtTlEH6PJO0EiM9hG/90xEhceP4pzF4XFABxeKnZ7EsRt4oeM4rEm91CExaXUztUizl723YSs9pjr2aS5ol+aK+SencYN4tt+8wxqEET9mfvRiUqa8LQAQVvAKv+NX6AC0lZzhuOpZkruCJ0M3UXrF6hF16KhmZ9yva58j+Pya0mvuL6+YUuwKLCBwgX/wPXhwCDBDkXAp+jrRfS7doVQJuXw3/zLf/cbFLYaLPfm72aznN5sbAyZDCXfxB95Cy/Q0mmIVYSfAHF1dYKnrTa11PRl8FMlg93iZZcvzZbb40B0D7PMTWJnbnyA0XqGqyBYFeYKK/HLF69mbOChK/XTImtvPa3QPHrTvVw977QPbXu+98G9rAW7NBxBi34KdIbv92v/d4UhUAAB4nGNgZGBgAOKAxSL58fw2Xxm4mRhA4GzkRiYE/f8BEwPjAyCXgwEsCgAIAgmjAAB4nGNgZGBgfPD/AYMeEwMDwz8GIAkUQQGcAG3tA/wAAHicY2KAglUMDEwMDNpAHA7ErEBsCKJBUgAeWwF0AAAAAAAAAAAAAAAAUgB0AJQAsgDQAN54nGNgZGBg4GSwYmBiAAEQycgAEnMA8xkACQQAiwAAAHicbY49asNAFIQ/2ZJD4pAiRerFZUBCkl25SqUDuHBvxCIERgtr+xhpA6lyDB8gB8iVMlovuLAXlvnmMe8HeOaLhPElZHIXnvDAIvIUwz5yqsx35Iw558gzuT8lk/RRlafQNfKEF14jT/ngPXKqzGfkjDd+Is9U/6WnxTFwgL51g2SDpeOkO3Z4Wdud9jtBE3LHoF4Jq1trCkrpWv866eJX5Cz1ayUqEY0bjo3znTV1UZq1Cfukq3yZ12WlxO0xW63x8n2oGw0aF7K1/tC7wVRFeafrHwriMfgAAAB4nGNgYsAPOIGYkYGJkYmRmZGFkZWRjZGdvTQv09XAwABKG0JpIyhtDKVNQLQbUB0ATBQNKwAAAA==) format("woff"), url(data:application/x-font-ttf;charset=utf-8;base64,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) format("truetype"), url("font/icons.svg#icons") format("svg");
 }
-/* Code blocks */
-pre[class*="language-"] {
-  padding: 1em;
-  margin: .5em 0;
-  overflow: auto;
-  border-radius: 0.3em;
-}
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #272822;
-}
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-}
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: slategray;
-}
-.token.punctuation {
-  color: #f8f8f2;
-}
-.namespace {
-  opacity: .7;
-}
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol {
-  color: #f92672;
-}
-.token.boolean,
-.token.number {
-  color: #ae81ff;
-}
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.builtin {
-  color: #a6e22e;
-}
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #f8f8f2;
-}
-.token.atrule,
-.token.attr-value {
-  color: #e6db74;
-}
-.token.keyword {
-  color: #66d9ef;
-}
-.token.regex,
-.token.important {
-  color: #fd971f;
-}
-.token.important {
-  font-weight: bold;
-}
-.token.entity {
-  cursor: help;
-}
-@media screen and (min-width: 768px) {
-  body {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+@media screen and (max-width: 768px) {
   /*@bg-cl: #28282B;
     @wl-cl: #3F3F46;*/
   .sans {
-    font-family: 'Droid Sans', Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
   }
   .serif {
-    font-family: 'Droid Serif', Georgia, Times, serif;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  .icons {
-    font-family: 'Entypo';
+  .italics {
+    font-style: italic;
   }
   .capitals {
-    text-transform: uppercase;
-  }
-  a,
-  a:active,
-  a:focus,
-  a:visited {
-    text-decoration: none;
-  }
-  nav a {
     font-variant: small-caps;
-    font-weight: bolder;
+  }
+  .lowercase {
+    text-transform: lowercase;
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   /*
      * Structural
      */
+  html {
+    background: #ffffff;
+    height: 100%;
+  }
   body {
-    font-family: 'Droid Sans', Arial, sans-serif;
+    margin: 0 auto 0 0.6em;
+    padding: 0 0.6em 0 0.6em;
+    font-size: 1.2em;
+    color: #3c3c3c;
+    background: #ffffff;
+    height: 100%;
+    width: 100%;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body * {
+    font-size: 100%;
+  }
+  body h1 {
+    font-size: 2.8em;
+  }
+  body h2 {
+    font-size: 2.4em;
+  }
+  body h3 {
+    font-size: 2.0em;
+  }
+  body h4 {
+    font-size: 1.6em;
   }
   body h1,
   body h2,
@@ -215,95 +142,225 @@ pre[class*="language-"] {
   body h4,
   body h5,
   body h6 {
-    font-family: 'Droid Serif', Georgia, Times, serif;
-    display: inline-box;
-    width: 100%;
-  }
-  body header {
-    width: 100%;
-  }
-  body header nav ul {
+    margin: 0;
     padding: 0;
   }
-  body header nav ul li {
-    display: inline;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+  body .post-header {
+    background: #000;
   }
-  body header nav ul li:hover {
-    text-decoration: none;
+  body .post-header * {
+    color: #ffffff;
   }
-  body header nav ul li:not(:first-child) {
-    float: right;
-    margin-right: 1em;
-    font-size: xx-large;
-    padding-top: 0;
-    font-family: 'Entypo';
-  }
-  body header nav ul li:first-child {
-    text-transform: lowercase;
-  }
-  body header nav ul li a {
-    border: 5px solid #007acc;
+  body .post-header h1:first-of-type {
+    font-weight: bold;
     color: #fff;
-    padding: 5px;
-    padding-top: 3.75px;
-    background-color: #007acc;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  body header nav ul li a:hover {
-    border: 5px solid #68217a;
-    background-color: #68217a;
+  body .post-header p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  body article {
-    width: 100%;
+  body .post-header-padding {
+    padding: 10px 20px;
+  }
+  body .post {
+    background: #000;
+  }
+  body .post * {
+    color: #ffffff;
+  }
+  body .post h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .post p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .index article {
+    padding: 10px 20px;
+    background: #000;
+  }
+  body .index article * {
+    color: #ffffff;
+  }
+  body .index article h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .index article p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
 }
-@media screen and (min-width: 768px) and all and (max-width: 768px) a {
-  body header nav ul li {
-    display: inline;
+@media screen and (min-width: 768px) {
+  /*@bg-cl: #28282B;
+    @wl-cl: #3F3F46;*/
+  .sans {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+  }
+  .serif {
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  .italics {
+    font-style: italic;
+  }
+  .capitals {
+    font-variant: small-caps;
+  }
+  .lowercase {
+    text-transform: lowercase;
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  /*
+     * Structural
+     */
+  html {
+    background: #ffffff;
+    height: 100%;
+  }
+  body {
+    margin: 0 auto 0 0.6em;
+    padding: 0 0.6em 0 0.6em;
+    font-size: 1.2em;
+    color: #3c3c3c;
+    background: #ffffff;
+    height: 100%;
+    width: 60%;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body * {
+    font-size: 100%;
+  }
+  body h1 {
+    font-size: 2.8em;
+  }
+  body h2 {
+    font-size: 2.4em;
+  }
+  body h3 {
+    font-size: 2.0em;
+  }
+  body h4 {
+    font-size: 1.6em;
+  }
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6 {
+    margin: 0;
+    padding: 0;
+  }
+  body .post-header {
+    background: #000;
+  }
+  body .post-header * {
+    color: #ffffff;
+  }
+  body .post-header h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .post-header p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .post-header-padding {
+    padding: 10px 20px;
+  }
+  body .post {
+    background: #000;
+  }
+  body .post * {
+    color: #ffffff;
+  }
+  body .post h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .post p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .index article {
+    padding: 10px 20px;
+    background: #000;
+  }
+  body .index article * {
+    color: #ffffff;
+  }
+  body .index article h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .index article p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
 }
 @media screen and (min-width: 1280px) {
-  body {
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   /*@bg-cl: #28282B;
     @wl-cl: #3F3F46;*/
   .sans {
-    font-family: 'Droid Sans', Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
   }
   .serif {
-    font-family: 'Droid Serif', Georgia, Times, serif;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  .icons {
-    font-family: 'Entypo';
+  .italics {
+    font-style: italic;
   }
   .capitals {
-    text-transform: uppercase;
-  }
-  a,
-  a:active,
-  a:focus,
-  a:visited {
-    text-decoration: none;
-  }
-  nav a {
     font-variant: small-caps;
-    font-weight: bolder;
+  }
+  .lowercase {
+    text-transform: lowercase;
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   /*
      * Structural
      */
+  html {
+    background: #ffffff;
+    height: 100%;
+  }
   body {
-    font-family: 'Droid Sans', Arial, sans-serif;
+    margin: 0 auto 0 0.6em;
+    padding: 0 0.6em 0 0.6em;
+    font-size: 1.2em;
+    color: #3c3c3c;
+    background: #ffffff;
+    height: 100%;
+    width: 60%;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body * {
+    font-size: 100%;
+  }
+  body h1 {
+    font-size: 2.8em;
+  }
+  body h2 {
+    font-size: 2.4em;
+  }
+  body h3 {
+    font-size: 2.0em;
+  }
+  body h4 {
+    font-size: 1.6em;
   }
   body h1,
   body h2,
@@ -311,95 +368,112 @@ pre[class*="language-"] {
   body h4,
   body h5,
   body h6 {
-    font-family: 'Droid Serif', Georgia, Times, serif;
-    display: inline-box;
-    width: 1280px;
-  }
-  body header {
-    width: 100%;
-  }
-  body header nav ul {
+    margin: 0;
     padding: 0;
   }
-  body header nav ul li {
-    display: inline;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+  body .post-header {
+    background: #000;
   }
-  body header nav ul li:hover {
-    text-decoration: none;
+  body .post-header * {
+    color: #ffffff;
   }
-  body header nav ul li:not(:first-child) {
-    float: right;
-    margin-right: 1em;
-    font-size: xx-large;
-    padding-top: 0;
-    font-family: 'Entypo';
-  }
-  body header nav ul li:first-child {
-    text-transform: lowercase;
-  }
-  body header nav ul li a {
-    border: 5px solid #007acc;
+  body .post-header h1:first-of-type {
+    font-weight: bold;
     color: #fff;
-    padding: 5px;
-    padding-top: 3.75px;
-    background-color: #007acc;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  body header nav ul li a:hover {
-    border: 5px solid #68217a;
-    background-color: #68217a;
+  body .post-header p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  body article {
-    width: 100%;
+  body .post-header-padding {
+    padding: 10px 20px;
   }
-}
-@media screen and (min-width: 1280px) and all and (max-width: 768px) a {
-  body header nav ul li {
-    display: inline;
+  body .post {
+    background: #000;
+  }
+  body .post * {
+    color: #ffffff;
+  }
+  body .post h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .post p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .index article {
+    padding: 10px 20px;
+    background: #000;
+  }
+  body .index article * {
+    color: #ffffff;
+  }
+  body .index article h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .index article p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
 }
 @media screen and (min-width: 1920px) {
-  body {
-    width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   /*@bg-cl: #28282B;
     @wl-cl: #3F3F46;*/
   .sans {
-    font-family: 'Droid Sans', Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
   }
   .serif {
-    font-family: 'Droid Serif', Georgia, Times, serif;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  .icons {
-    font-family: 'Entypo';
+  .italics {
+    font-style: italic;
   }
   .capitals {
-    text-transform: uppercase;
-  }
-  a,
-  a:active,
-  a:focus,
-  a:visited {
-    text-decoration: none;
-  }
-  nav a {
     font-variant: small-caps;
-    font-weight: bolder;
+  }
+  .lowercase {
+    text-transform: lowercase;
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   /*
      * Structural
      */
+  html {
+    background: #ffffff;
+    height: 100%;
+  }
   body {
-    font-family: 'Droid Sans', Arial, sans-serif;
+    margin: 0 auto 0 0.6em;
+    padding: 0 0.6em 0 0.6em;
+    font-size: 1.2em;
+    color: #3c3c3c;
+    background: #ffffff;
+    height: 100%;
+    width: 60%;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body * {
+    font-size: 100%;
+  }
+  body h1 {
+    font-size: 2.8em;
+  }
+  body h2 {
+    font-size: 2.4em;
+  }
+  body h3 {
+    font-size: 2.0em;
+  }
+  body h4 {
+    font-size: 1.6em;
   }
   body h1,
   body h2,
@@ -407,57 +481,56 @@ pre[class*="language-"] {
   body h4,
   body h5,
   body h6 {
-    font-family: 'Droid Serif', Georgia, Times, serif;
-    display: inline-box;
-    width: 1920px;
-  }
-  body header {
-    width: 100%;
-  }
-  body header nav ul {
+    margin: 0;
     padding: 0;
   }
-  body header nav ul li {
-    display: inline;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+  body .post-header {
+    background: #000;
   }
-  body header nav ul li:hover {
-    text-decoration: none;
+  body .post-header * {
+    color: #ffffff;
   }
-  body header nav ul li:not(:first-child) {
-    float: right;
-    margin-right: 1em;
-    font-size: xx-large;
-    padding-top: 0;
-    font-family: 'Entypo';
-  }
-  body header nav ul li:first-child {
-    text-transform: lowercase;
-  }
-  body header nav ul li a {
-    border: 5px solid #007acc;
+  body .post-header h1:first-of-type {
+    font-weight: bold;
     color: #fff;
-    padding: 5px;
-    padding-top: 3.75px;
-    background-color: #007acc;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  body header nav ul li a:hover {
-    border: 5px solid #68217a;
-    background-color: #68217a;
+  body .post-header p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
-  body article {
-    width: 100%;
+  body .post-header-padding {
+    padding: 10px 20px;
   }
-}
-@media screen and (min-width: 1920px) and all and (max-width: 768px) a {
-  body header nav ul li {
-    display: inline;
+  body .post {
+    background: #000;
+  }
+  body .post * {
+    color: #ffffff;
+  }
+  body .post h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .post p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .index article {
+    padding: 10px 20px;
+    background: #000;
+  }
+  body .index article * {
+    color: #ffffff;
+  }
+  body .index article h1:first-of-type {
+    font-weight: bold;
+    color: #fff;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+  }
+  body .index article p:first-of-type {
+    font-style: italic;
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
   }
 }

@@ -1,0 +1,30 @@
+<header>
+	<nav>
+		{% capture postCount %} {{ site.posts | size }} {% endcapture %}
+		
+		{% if page.title == "home" %}
+			<a href="/{{ postCount | remove: ' ' }}/">latest</a>
+		{% else %}
+			
+			{% capture pageId %} {{ page.id | remove: '/' | remove: ' ' | remove: ' ' | strip_newlines }} {% endcapture %}
+			
+			{% if pageId == " 1 " %}
+
+				<a class="disabled">previous</a>
+				<a href="/{{ pageId | plus: 1 }}/">next</a>
+			
+			{% elsif pageId != 1 and pageId == (postCount | minus: 1) %}
+			
+				<a href="/{{ pageId | minus: 1 }}/">previous</a>
+				<a class="disabled">next</a>
+			
+			{% else %}
+			
+				<a href="/{{ pageId | minus: 1 }}/">previous</a>
+				<a href="/{{ pageId | plus: 1 }}/">next</a>
+			
+			{% endif %}
+			
+		{% endif %}
+	</nav>
+</header>
