@@ -1,0 +1,311 @@
+.main(@page-width, @container-width) {
+  .sans {
+    font-family: arial, sans-serif;
+    font-weight: 400;
+  }
+  
+  .serif {
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+    font-weight: 400;
+  }
+  
+  .icon {    font-family: 'icons'; }
+  .italics { font-style: italic; }
+  .capitals { font-variant: small-caps; }
+  .lowercase { text-transform: lowercase; }
+  .uppercase { text-transform: uppercase; }
+  .font-weight(@weight) { font-weight: @weight; }
+  
+  @root-bg-color: #fff;
+  
+  html {
+    background: @root-bg-color;
+    font-size: 16px;
+    
+    .height(100%);
+  }
+  
+  body {
+    @base-font-size: 1.2em;
+    @base-font-color: #000;
+    @base-bg-color: @root-bg-color;
+    @base-link-color: (#fff * 0.4);
+    
+    @base-v-padding: 10px;
+    @base-h-padding: 20px;
+    
+    margin: 0;
+    padding: 0;
+    
+    font-size: @base-font-size;
+    color: @base-font-color;
+    
+    .height(100%);
+    .width(@cont-width);
+    .serif;
+    
+    .post {
+      background: inherit;
+      color: inherit;
+      
+      & > h1:first-of-type,
+      & > p:first-of-type {
+        background: #fff - @base-bg-color;
+        color: #fff - @base-font-color;
+      }
+    }
+    
+    .index {
+      .child-style(@bg-color, @font-color) {
+        background: @bg-color;
+        color: @font-color;
+        
+        .transit(0.8s);
+        
+        h1, h2, h3, h4, h5, h6 {
+          text-shadow: 1px 1px 0px spin(@font-color, 45);
+        }
+        
+        // article at the top
+        &:first-of-type {
+          background: #fff - @bg-color;
+          
+          .transit(0.8s);
+
+          a {
+            color: #fff - @base-link-color;
+          }
+          
+          p {
+            color: @base-link-color;
+          }
+          
+          &:hover {
+            h1 a {
+              color: #fff - @font-color;
+            }
+            
+            p {
+              color: #fff - @font-color;
+            }
+            
+            background: #fff - @bg-color;
+          }
+        }
+        
+        // articles after the first one
+        &:not(:first-of-type):hover {
+          background: @base-link-color;
+        }
+        
+        &:hover {
+          background: @base-link-color;
+          color: spin(@font-color, 45);
+          
+          h1 a {
+            color: @font-color;
+          }
+          
+          p {
+            color: @font-color;
+          }
+        }
+      }
+      
+      &:nth-child(even) {
+        .child-style(@base-bg-color, @base-font-color);
+      }
+      
+      &:nth-child(odd) {
+        .child-style(
+          spin(@base-bg-color, 180),
+          spin(@base-font-color, 180));
+      }
+    }
+    
+    .link {
+      color: darken(@base-font-color, 50%);
+      font-size: 90%;
+       
+      .transit(0.2s);
+      
+      &:hover {
+        color: @base-link-color;
+        text-decoration: none;
+      }
+    }
+    
+    .link-reversed {
+      color: @base-link-color;
+      font-size: 90%;
+      text-decoration: none;
+      
+      .transit(0.2s);
+      
+      &:hover {
+        color: lighten(#fff - @base-font-color, 50%);
+      }
+    }
+    
+    .code-block {
+      padding: (@base-v-padding * 2) (@base-h-padding * 2);
+      //margin: (@base-h-padding * 2);
+
+      background: @base-bg-color * -1;
+      color: #fff - @base-font-color;
+        
+      .transit(0.2s);
+        
+      &:hover {
+        border-right: 5px solid yellow;
+      }
+    }
+    
+    .code-inline {
+      padding: (@base-v-padding / 5) (@base-h-padding / 5);
+      background: @base-bg-color * 0.9;
+    }
+    
+    .list {
+      background: #fff - @base-bg-color;
+      color: #fff - @base-font-color;
+    }
+    
+    .list-item {
+      background: @base-bg-color;
+      color: @base-font-color;
+      
+      padding-top: @base-v-padding;
+      padding-bottom: @base-v-padding;
+    }
+    
+    .header-padding {
+      padding: @base-v-padding @base-h-padding;
+      padding-bottom: (@base-v-padding * .2);
+    }
+    
+    h1 { font-size: 3.0em; }
+    h2 { font-size: 2.6em; }
+    h3 { font-size: 2.2em; }
+    h4 { font-size: 1.8em; }
+    h5 { font-size: 1.4em; }
+    h6 { font-size: 1.0em; }
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      padding: 0;
+      
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    
+    p {
+      a {
+        .link;
+      }
+      
+      code {
+        .code-inline;
+      }
+    }
+    
+    .index, 
+    .post {
+      .transit(0.2s);
+      
+      h1, h2, h3, h4, h5, h6 {
+        .header-padding;
+        .font-weight(bold);
+      }
+      
+      p {
+        margin: 0;
+        padding: @base-v-padding @base-h-padding;
+      }
+      
+      p:first-of-type {
+        margin-top: -(@base-v-padding * .02);
+        padding-bottom: @base-v-padding * 2;
+        
+        .italics;
+        .serif;
+      }
+      
+      pre {
+        .code-block;
+      }
+      
+      header {
+        nav {
+          .height(100%);
+          
+          a {
+            padding: 5px;
+            background: spin(@base-bg-color, 180);
+            text-decoration: none;
+            color: spin(@base-font-color, 180);
+            
+            &.disabled {
+              visbility: hidden;
+            }
+          }
+        }
+      }
+    }
+    
+    article:only-of-type {
+      .post;
+      
+      ul, ol:not(:first-of-type) {
+        .list;
+        
+        li a {
+          .link-reversed;
+        }
+        
+        li p {
+          .list-item;
+        }
+      }
+      
+      ul:last-of-type {
+        padding-top: @base-v-padding * 2;
+        padding-bottom: @base-v-padding * 4;
+      }
+    }
+    
+    article:not(:only-of-type) {
+      .index;
+    }
+    
+    header {
+      background: #000;
+      
+      .width(100%);
+      
+      nav {        
+        .header-padding;
+        
+        padding-bottom: @base-v-padding;
+        
+        a {
+          text-decoration: none;
+          color: @base-link-color;
+          text-align: center;
+          padding: 0px 5px 2px 5px;
+          border-radius: 5%;
+          
+          &:hover {
+            color: #fff - @base-font-color;
+          }
+        }
+        
+        a.disabled {
+          display: none;
+        }
+      }
+    }
+  }
+}

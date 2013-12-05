@@ -1,0 +1,11 @@
+	<h1 id="top">
+		{% if link %}
+			<a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+		{% else %}
+			{{ post.title }}
+		{% endif %}
+	</h1>
+	
+	<p>
+		{{ post.summary }}
+	</p>
