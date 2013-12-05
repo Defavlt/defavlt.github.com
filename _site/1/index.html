@@ -14,10 +14,10 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>First here</title>
+    <title>Pagination outside index with Jekyll</title>
   </head>
   
-  	<body class="id_1 post">
+  	<body class="id_1">
   
   
  
@@ -32,44 +32,104 @@
 			
 			
 
+			
+			
+
+			
+			
+				
+				
+
 				<a class="disabled">previous</a>
-				<a href="/2/">next</a>
+				<a title="" href="/2/">next</a>
 			
 			
+			
+			<a href="/">home</a>
 			
 		
 	</nav>
 </header>
 	<article>
-	<h1>First here</h1>
-
+	
+	
+		<h1 id="top">
+		
+			Pagination outside index with Jekyll
+		
+	</h1>
+	
 	<p>
-		 In varius fermentum posuere. Vivamus suscipit accumsan arcu ac ullamcorper. Aliquam adipiscing, ante non eleifen d blandit, nunc diam vulputate augue, eu convallis lorem lacus in lacus. 
+		How to access other posts and pages outside the index file.
 	</p>
 	
-	<h3>H3 Headers</h3>
+	<ol>
+<li><a href="#Background">Background</a></li>
+<li><a href="#Solution">Solution</a></li>
+</ol>
 
-<p>Cu
-rabitur ultricies ultrices diam, vel tincidunt dui rhoncus a. Vivamus at sa
-pien in turpis consequat pharetra sit amet quis elit. Cu
-rabitur ultricies ultrices diam, vel tincidunt dui rhoncus a. Vivamus at sa
-pien in turpis consequat pharetra sit amet quis elit.</p>
+
+<h2>Background</h2>
+
+<p>When I built <a href="/">this site</a> I needed a way to access other pages and posts outside the current, without using <abbr title="Asynchronous Javascript And *">AJA*</abbr>
+(so I could have automatic linking to the previous and next post in the header).</p>
+
+<h2>Solution</h2>
+
+<p>In the array <code>site.posts</code> you can find, and browse through, all the available posts for the entire site.</p>
+
+<pre><code>{% for post in site.posts%}
+    {{ post.title }}
+{% endfor %}
+</code></pre>
+
+<p>Knowing this, there's not much more to it than this:</p>
+
+<pre><code>{% assign i = (site.posts | size) %}
+    {% for p in site.posts %}
+        {% if p.url == page.url %}
+            {% assign pageId = i %}
+            {% break %}
+        {% endif %}
+
+    {% capture i %}{{ i | minus: 1 }}{% endcapture %}
+{% endfor %}
+</code></pre>
+
+<p>What happens here is that we increment a counter for each post in site.posts,
+and if the url of the current post in the loop matches the url of the current page we know our pages real id.</p>
+
+<p>If you look close enough, you see that we <strong>decrement</strong> our counter (<code>i</code>). This is because post id <code>1</code> belongs to
+<em>the first ever post</em>, not the last one*.</p>
+
+<p>*We could have just as easily started at 1 and incremented our counter, but that would have forced us to use the <code>reversed</code> filter in the for loop instead.</p>
+
+<p><strong><em>This post is one in a series of posts on building a site with <a href="http://jekyllrb.com/">Jekyll</a>. These are the articles I have written so far, in no particular order:</em></strong></p>
+
+<ul>
+
+    
+        <li><a href="/2/" title="Structuring a jekyll theme">Structuring a jekyll theme</a></li>    
+    
+
+    
+        <li><a href="/1/" title="Pagination outside index with Jekyll">Pagination outside index with Jekyll</a></li>    
+    
+
+</ul>
+
+
+<p></p>
 
 </article>
-	<footer>
-		<section>
-			<a class="facebook icons" href="http://facebook.com/defavlt">&#xe027;</a>
-  			<a class="twitter icons" href="http://twitter.com/defavlt">&#xe086;</a>
-  			<a class="stackoverflow icons" href="http://stackoverflow.com/users/512929/marcus-hansson">&#xe081;</a>
-  			<a class="github icons" href="http://github.com/defavlt/">&#xe037;</a>
-		</section>
-	</footer>
+	
   </body>
   <!--<script type="text/javascript" src="js/prettify/run_prettify.js"></script>-->
   
   <script type="text/javascript" src="/js/prism.js"></script>
   
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <script type="text/javascript" src="/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/js/spin.min.js"></script>
   <script type="text/javascript" src="/js/root.js"></script>

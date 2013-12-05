@@ -21,9 +21,9 @@
     <title>{{ page.title }}</title>
   </head>
   {% if page.title == "home" %}
-  	<body class="index">
+  	<body>
   {% else %}
-  	<body class="id_{{ page.id | remove: '/' }} post">
+  	<body class="id_{{ page.id | remove: '/' }}">
   {% endif %}
   
  {% comment %}

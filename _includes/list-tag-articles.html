@@ -1,0 +1,7 @@
+<ul>
+{% for post in site.posts %}
+	{% if post.tags contains list-tag %}
+		<li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>	
+	{% endif %}
+{% endfor %}
+</ul>
