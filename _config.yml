@@ -1,7 +1,7 @@
 email : marcus.hansson@email.com
 github : github.com/defavlt
 name: "defav.lt"
-url: "http://localhost/defav.lt/"  
+url: "http://defav.lt/"  
 paginate: 5
 markdown: rdiscount
 permalink: /:title/
