@@ -7,8 +7,9 @@ function compile {
         printf "\n"
         exit;
     else
-        output=${2:-"css"}
-        input=${3:-"_scss"}
+        src=${4:-"src/"}
+        output=${2:-"$src/css"}
+        input=${3:-"$src/_scss"}
 
         case "$1" in
             watch)
@@ -16,6 +17,10 @@ function compile {
             ;;
             now)
                 scss --update $input $output
+            ;;
+        "serve now")
+                compile now
+                compile serve
             ;;
             serve)
                 clear

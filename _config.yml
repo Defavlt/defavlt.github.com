@@ -1,3 +1,8 @@
+# GENERATION
+source : "./src/"
+destination : ".site/"
+
+# SITE
 email : marcus.hansson@email.com
 github : github.com/defavlt
 name: "defav.lt"
