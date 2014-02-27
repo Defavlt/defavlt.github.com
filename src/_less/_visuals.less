@@ -1,0 +1,191 @@
+.main(@page-width, @container-width) {
+  .sans {
+    font-family: arial, sans-serif;
+    font-weight: 400;
+  }
+  
+  .serif {
+    font-family: Cambria, 'Palatino Linotype', Georgia, Serif;
+    font-weight: 400;
+  }
+  
+  .icon {    font-family: 'icons'; }
+  .italics { font-style: italic; }
+  .capitals { font-variant: small-caps; }
+  .lowercase { text-transform: lowercase; }
+  .uppercase { text-transform: uppercase; }
+  .font-weight(@weight) { font-weight: @weight; }
+  
+  @bg-color: #fff;
+  
+  html {
+    background: @bg-color;
+    font-size: 16px;
+    
+    .height(100%);
+  }
+  
+  body {
+    @base-font-size: 1.2em;
+    @base-font-color: #fff;
+    @base-bg-color: @bg-color;
+    @base-link-color: #eee;
+    
+    @base-v-padding: 10px;
+    @base-h-padding: 20px;
+    
+    margin: 0;
+    padding: 0;
+    
+    font-size: @base-font-size;
+    color: @base-font-color;
+    
+    .height(100%);
+    .width(@cont-width);
+    .serif;
+    
+    .link {
+      color: @base-link-color;
+      font-size: 90%;
+       
+      .transit(0.8s);
+      
+      &:hover {
+        color: @base-font-color;
+        text-decoration: none;
+      }
+    }
+    
+    .code-block {
+      padding: (@base-v-padding * 2) (@base-h-padding * 2);
+      margin: (@base-h-padding * 2);
+      background: darken(@base-bg-color, 100%);
+      color: lighten(@base-font-color, 100%);
+        
+      .transit(0.2s);
+        
+      &:hover {
+        border-right: 5px solid yellow;
+      }
+    }
+    
+    .code-inline {
+      padding: (@base-v-padding / 5) (@base-h-padding / 5);
+      background: spin(@base-bg-color, 14.4);
+    }
+    
+    h1 { font-size: 3.0em; }
+    h2 { font-size: 2.6em; }
+    h3 { font-size: 2.2em; }
+    h4 { font-size: 1.8em; }
+    h5 { font-size: 1.4em; }
+    h6 { font-size: 1.0em; }
+    
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      padding: 0;
+      
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    
+    p {
+      a {
+        .link;
+      }
+      
+      code {
+        .code-inline;
+      }
+    }
+    
+    .index, 
+    .post {
+      .transit(0.2s);
+      
+      h1, h2, h3, h4, h5, h6 {
+        padding: @base-v-padding 0 @base-h-padding;
+      }
+      
+      h1:first-of-type {
+        .font-weight(bold);
+        .serif;
+      }
+      
+      p {
+        margin: 0;
+        padding: @base-v-padding @base-h-padding;
+      }
+      
+      p:first-of-type {
+        margin-top: -(@base-v-padding * .02);
+        padding-bottom: @base-v-padding * 2;
+        
+        .italics;
+        .serif;
+      }
+      
+      pre {
+        .code-block;
+      }
+      
+      header {
+        nav {
+          .height(100%);
+          
+          a {
+            padding: 5px;
+            background: spin(@base-bg-color, 180);
+            text-decoration: none;
+            color: spin(@base-font-color, 180);
+            
+            &.disabled {
+              visbility: hidden;
+            }
+          }
+        }
+      }
+    }
+    
+    .post {
+      background: inherit;
+      color: inherit;
+    }
+    
+    .index {
+      .child-style(@bg-color, @font-color) {
+        background: @bg-color;
+        color: @font-color;
+        
+        h1:first-of-type a {
+          color: @font-color;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+          text-shadow: 1px 1px 0px spin(@font-color, 45);
+        }
+        
+        &:hover {
+          background: spin(@bg-color, 45);
+          color: spin(@font-color, 45);
+          
+          h1:first-of-type a {
+            color: @font-color;
+          }
+        }
+      }
+      
+      &:nth-child(even) {
+        .child-style(@base-bg-color, @base-font-color);
+      }
+      
+      &:nth-child(odd) {
+        .child-style(
+          spin(@base-bg-color, 180),
+          spin(@base-font-color, 180));
+      }
+    }
+  }
+}

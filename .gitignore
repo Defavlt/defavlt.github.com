@@ -1,5 +1,9 @@
 .project
 *.swp
 *cache/
+
+_site/
 _site/**/*
+
+.site/
 .site/**/*
