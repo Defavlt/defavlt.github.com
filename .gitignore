@@ -2,6 +2,9 @@
 *.swp
 *cache/
 
+.tmp/
+.tmp/**/*
+
 _site/
 _site/**/*
 
