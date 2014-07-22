@@ -26,14 +26,14 @@
 				{% assign nextId = (pageId | plus: 1 ) %}
 
 				<a class="disabled">previous</a>
-				<a title="{{ next.title }}" href="{{ site.url }}{{ nextId }}/">next</a>
+				<a title="{{ next.title }}" href="{{ site.url }}/{{ nextId }}/">next</a>
 			
 			{% elsif postCount == pageId %}
 			
 				{% assign prevId = (pageId | minus: 1 ) %}
 				{% assign nextId = nil %}
 
-				<a title="{{ prev.title }}" href="{{ site.url }}{{ prevId }}/">previous</a>
+				<a title="{{ prev.title }}" href="{{ site.url }}/{{ prevId }}/">previous</a>
 				<a class="disabled">next</a>
 			
 			{% else %}
@@ -41,8 +41,8 @@
 				{% assign prevId = (pageId | minus: 1 ) %}
 				{% assign nextId = (pageId | plus: 1 ) %}
 			
-				<a title="{{ prev.title }}" href="{{ site.url }}{{ prevId }}/">previous</a>
-				<a title="{{ next.title }}" href="{{ site.url }}{{ nextId }}/">next</a>
+				<a title="{{ prev.title }}" href="{{ site.url }}/{{ prevId }}/">previous</a>
+				<a title="{{ next.title }}" href="{{ site.url }}/{{ nextId }}/">next</a>
 			
 			{% endif %}
 			
