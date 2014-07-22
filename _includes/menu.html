@@ -3,7 +3,7 @@
 		{% assign postCount = (site.posts | size | downcase) %}
 		
 		{% if page.title == "home" %}
-			<a href="{{ site.url }}{{ postCount | remove: ' ' }}/">latest</a>
+			<a href="{{ site.url }}/{{ postCount | remove: ' ' }}/">latest</a>
 		{% else %}
 			{% assign pageId = (page.id | remove: '/' | downcase) %}
 			
