@@ -5,7 +5,8 @@ destination : ".site/"
 email : marcus.hansson@email.com
 github : github.com/defavlt
 name: "defav.lt"
-url: "http://defav.lt"  
+#url: "http://defav.lt"
+url: http://localhost:4000
 paginate: 5
 markdown: rdiscount
 permalink: /:title/
