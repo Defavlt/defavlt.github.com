@@ -16,7 +16,7 @@
 
     <title>{{ page.title }}</title>
   </head>
-  {% if page.title == "home" %}
+  {% if page.page %}
   	<body>
   {% else %}
   	<body class="id_{{ page.id | remove: '/' }}">
