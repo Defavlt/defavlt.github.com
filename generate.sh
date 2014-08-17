@@ -16,6 +16,7 @@ then
 elif [ -d "$OUTPUT/.git" ];
 then
     cd "$OUTPUT"
+    git co "$OUTPUT_BRANCH"
     git pull origin "$OUTPUT_BRANCH"
 fi
 
