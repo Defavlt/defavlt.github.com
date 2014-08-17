@@ -33,17 +33,11 @@ module Jekyll
                         content = $~[:content]
                         id = content.gsub /\s+/, '-'
 
-                        puts "CONTENT: " +content
-                        puts "ID: " +id
-                        puts "TAG: " +tag
-                        puts "ATTRS: " +attr
-                        puts "\n"
-
                         <<-eos
                             <#{tag} #{attr} id=\"#{id}\">
                                 <a href=\"\##{id}\">#{content}</a>
                                 <a href="#top"> *</a>
-                            </#{tag}>"
+                            </#{tag}>
                         eos
                     end
                 end

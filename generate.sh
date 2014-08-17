@@ -7,6 +7,7 @@ OUTPUT_BRANCH="master"
 
 #What happens if $OUTPUT doesn't exist?!
 #cd "$OUTPUT"
+shopt -s extglob
 
 if [ ! -d "$OUTPUT" ] || [ ! -d "$OUTPUT/.git" ];
 then
@@ -21,22 +22,19 @@ fi
 cd "$OUTPUT"
 git co "$OUTPUT_BRANCH"
 
-shopt -s extglob
 rm -rf "$OUTPUT"/!(.git|.gitignore|..|.)
  
 #Turn it off when you're done, please
-shopt -u extglob
 
 cd "$SOURCE"
 jekyll build 1>/dev/null
-cp -Rf "$SOURCE/.site"/* $OUTPUT
+cp -Rf "$SOURCE/.site"/!("generate.sh") $OUTPUT
 
 cd "$OUTPUT"
-echo "`pwd`"
-exit 1
-git add *
+git add !(".."|".")/*
 git commit
 git push
 
 cd "$SOURCE"
+shopt -u extglob
 echo "All done."
