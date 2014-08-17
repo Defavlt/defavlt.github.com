@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="author" content="" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/css/root.css" media="screen" />
+    <script type="text/javascript" src="http://localhost:4000/js/prefixfree.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Building a plugin for Jekyll</title>
+  </head>
+  
+  	<body class="id_4">
+  
+  
+ 
+ 
+<header>
+	<nav>
+		
+		
+		
+			
+			
+			
+			
+				
+				
+				
+			
+				
+					
+					
+
+			
+			
+
+			
+			
+				
+				
+			
+				<a title="" href="http://localhost:4000/3/">previous</a>
+				<a title="" href="http://localhost:4000/5/">next</a>
+			
+			
+			
+			<a href="http://localhost:4000">home</a>
+			
+		
+	</nav>
+</header>
+
+
+	<article>
+	
+	
+	<h1 >
+		
+			Building a plugin for Jekyll
+		
+</h1>
+	
+<p>
+	The general layout of a plugin for Jekyll
+</p>
+
+	
+	<ol>
+<li><a href="#Background">Background</a></li>
+<li><a href="#Problem">Problem</a></li>
+<li><a href="#Solution">Solution</a></li>
+</ol>
+
+
+                            <h2  id="Background">
+                                <a href="#Background">Background</a>
+                                <a href="#top"> *</a>
+                            </h2>
+
+
+<p>If you haven't noticed, very header on this site is a link. This is so that you can share a specific portion of a post, much in the same way <a href="http://en.wikipedia.org/wiki/Wikipedia:About#About_Wikipedia">Wikipedia</a> works.
+Now, when I built this site, I wanted the markup to have as much semantic meaning as possible, meaning that every id, every class and basically every tag has to make sense without CSS or Javascript (I'm not there yet, though! Try visiting the website through <a href="http://lynx.browser.org/">lynx</a>).</p>
+
+<p>One of the weakest links of what I've had the time to do as of today, was the page intralink functionality I spoke of above. The way it was set up, was that when the page is loaded and ready, [a small script][1] inserted links to every header on the page.</p>
+
+<p>Now, you might wonder: "But Marcus, how do browsers such as lynx, or Google Bot see these links?"
+Truth is: They don't.</p>
+
+<p>The first thing I did to remedy the situation, was to throw the Javascript "solution" out the window. It was a quick hack at best, and I honestly don't know what I thought when I pushed it live.</p>
+
+                            <h2  id="Ruby-to-the-rescue">
+                                <a href="#Ruby-to-the-rescue">Ruby to the rescue</a>
+                                <a href="#top"> *</a>
+                            </h2>
+
+
+<p><a href="http://jekyllrb.com">Jekyll</a> is built using <a href="https://www.ruby-lang.org/">Ruby</a>. By extension, so is the <a href="/">site</a> you're reading now.
+Jekyll is extensible, and any files matching <code>_plugins/*.rb</code> from within your source directory will be loaded into the generation runtime.</p>
+
+<p>Using this pattern you can create <a href="http://jekyllrb.com/docs/plugins/#generators">Generators</a> that generate new content, <a href="http://jekyllrb.com/docs/plugins/#converters">Converters</a> that convert source content into something else, and bascially anything you can do using Ruby (Read: anything, <a href="http://en.wikipedia.org/wiki/Turing_Complete">click here</a>).</p>
+
+<p>My solution to our little <a href="http://defav.lt/4/#Background">problem</a> was to plop a <code>Converter</code> into the <code>_plugins</code> directory, <a href="http://en.wikipedia.org/wiki/Monkey_patch">monkey patch</a> the Markdown engine I use (<a href="https://github.com/davidfstr/rdiscount">RDiscount</a>) and overload the <code>convert</code> method.</p>
+
+                            <h2  id="The-structure-of-plugins-for-Jekyll">
+                                <a href="#The-structure-of-plugins-for-Jekyll">The structure of plugins for Jekyll</a>
+                                <a href="#top"> *</a>
+                            </h2>
+
+
+<p>For starters, add this to your file:</p>
+
+<pre><code>#_plugins/converter.rb:
+
+module Jekyll
+    module Converters
+        class Markdown
+            class RDiscountParser
+
+            end
+        end
+    end
+end
+</code></pre>
+
+<p>Go ahead and open up a parser of your choice. I'm using RDiscount, so that's what I used. Your parser might not reside in <code>Jekyll::Converters::Markdown</code>, so check your documentation!</p>
+
+<p>While we're at it, toss this into the mix:</p>
+
+<pre><code>#_plugins/converter.rb:
+# [..]
+
+alias_method :original_convert, :convert
+
+def convert(content)
+    return original_convert(content)
+end
+
+# [..]
+</code></pre>
+
+<p>What this does, is that it creates an alias to the <em>original <code>convert</code> method</em> so we can use our own version as well.</p>
+
+<p><strong>NOTE:</strong> <em>I know many old-timers with Ruby will scream and bang their head at me for using the <code>return</code> statement. But since I use a multitude of languages every single day, I prefer to stick to a syntax that's </em>familiar<em>. Readability over standards in my case, unfortunately.</em></p>
+
+<p>Next, add these two methods so Jekyll will know which files we should process:</p>
+
+<pre><code>#_plugins/converter.rb:
+# [..]
+
+def matches(ext)
+    return ext =~ /^\.html$/i
+end
+
+def output_ext(ext)
+    return ext
+end
+
+# [..]
+</code></pre>
+
+<p>Simple enough. Match all <code>.html</code> files and output an extension we want (of course, modify these however you want).</p>
+
+<p>This is really all you need to know to extend your Parser. Put your logic in <code>convert</code> and modify <code>content</code> however you see fit. You can find my particular solution further down the page.</p>
+
+                            <h2  id="Remark">
+                                <a href="#Remark">Remark</a>
+                                <a href="#top"> *</a>
+                            </h2>
+
+
+<p>Worth noting, is that even though I use this on my own site, it's not <em>in the wild</em>. I use this every 50003432343 year or so when I create a new post and have to regenerate my site. I would never use this somewhat hacky solution on something that's "public facing", i.e. in a RoR controller or something, for that I'd opt for a full-fleshed parser (perhaps <a href="http://nokogiri.org/">Nokogiri</a>?) instead of some homegrown regular expression.</p>
+
+<pre><code>#
+# If you use this code, put a link somewhere to this post. 
+# Otherwise you're free to do whatever you want.
+# If you make a gazillion dollars with it, hire me!
+#
+module Jekyll
+    module Converters
+        class Markdown
+            class RDiscountParser
+
+                #Matches any h2-h6 tag with or without attributes
+                START_PATTERN = /\&lt;(?&lt;tag&gt;h[2-6])\s*(?&lt;attr&gt;(\w+(\=(\"|\')(\w|\s)*(\"|\'))*\s*)*)\&gt;/
+
+                #Matches any ending h2-h6 tag
+                END_PATTERN = /\&lt;\/\s*(?&lt;tag&gt;h[0-6])\s*\&gt;/
+
+                #The tag that was matched in START_PATTER, END_PATTER and the content between them
+                CONTENT = /\&lt;(?&lt;tag&gt;h[2-6])\s*(?&lt;attr&gt;(\w+(\=(\"|\')(\w|\s)*(\"|\'))*\s*)*)\&gt;(?&lt;content&gt;(\w|\s|\d|\n|[\!\"\#\&amp;\(\)\=\?\\\/\.-])*)?\&lt;\/\s*(?&lt;tag&gt;h[0-6])\s*\&gt;/
+
+                def matches(ext)
+                    ext =~ /^\.html$/i
+                end
+
+                def output_ext(ext)
+                    ext
+                end
+
+                alias_method :original_convert, :convert
+                def convert(content)
+
+                    return original_convert(content).gsub CONTENT do |match|
+                        #Remember
+                        #content = the content between the tag
+                        #attr = the attributes of the tag
+                        #tag = the tag itself
+
+                        tag = $~[:tag]
+                        attr = $~[:attr]
+                        content = $~[:content]
+                        id = content.gsub /\s+/, '-'
+
+                        # After formatting:
+                        # &lt;hx x="y"&gt;
+                        #  &lt;a href="#Some-Header"&gt;Some Header&lt;/a&gt;
+                        #  &lt;a href="#top"&gt; *&lt;/a&gt;
+                        # &lt;/hx&gt;
+                        &lt;&lt;-eos
+                            &lt;#{tag} #{attr} id=\"#{id}\"&gt;
+                                &lt;a href=\"\##{id}\"&gt;#{content}&lt;/a&gt;
+                                &lt;a href="#top"&gt; *&lt;/a&gt;
+                            &lt;/#{tag}&gt;"
+                        eos
+                    end
+                end
+            end
+        end
+    end
+end
+</code></pre>
+
+<p><strong><em>This post is one in a series of posts on building a site with <a href="http://en.wikipedia.org/wiki/Wikipedia:About#About_Wikipedia">Jekyll</a>. These are the articles I have written so far, in no particular order:</em></strong></p>
+
+<ul>
+
+    
+        <li><a href="/5/" title="Content generation and version tracking across branches">Content generation and version tracking across branches</a></li>  
+    
+
+    
+        <li><a href="/4/" title="Building a plugin for Jekyll">Building a plugin for Jekyll</a></li>    
+    
+
+    
+
+    
+        <li><a href="/2/" title="Structuring a jekyll theme">Structuring a jekyll theme</a></li>    
+    
+
+    
+        <li><a href="/1/" title="Pagination outside index with Jekyll">Pagination outside index with Jekyll</a></li>    
+    
+
+</ul>
+
+
+
+
+</article>
+	
+  </body>
+  
+  <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/tomorrow-night-bright.min.css">
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="http://localhost:4000/js/root.js"></script>
+
+  <script type="text/javascript">
+    if (hljs !== undefined)
+        hljs.initHighlightingOnLoad();
+  </script>
+</html>
