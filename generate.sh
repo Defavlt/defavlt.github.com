@@ -33,7 +33,8 @@ cp -Rf "$SOURCE/.site"/!("generate.sh") $OUTPUT
 
 cd "$OUTPUT"
 git add !(".."|".")/*
-git commit
+git add *
+git commit -am "`echo date`"
 git push
 
 cd "$SOURCE"
