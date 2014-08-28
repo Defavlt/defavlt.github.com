@@ -1,0 +1,11 @@
+html body {
+  margin: 0; }
+  html body header nav {
+    background: #DDD; }
+    html body header nav a {
+      font-family: "Droid Sans";
+      font-weight: bold;
+      display: inline-block;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1em; }
