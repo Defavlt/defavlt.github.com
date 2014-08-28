@@ -9,7 +9,7 @@ module Jekyll
                 END_PATTERN = /\<\/\s*(?<tag>h[0-6])\s*\>/
 
                 #The tag that was matched in START_PATTER, END_PATTER and the content between them
-                CONTENT = /\<(?<tag>h[2-6])\s*(?<attr>(\w+(\=(\"|\')(\w|\s)*(\"|\'))*\s*)*)\>(?<content>(\w|\s|\d|\n|[\!\"\#\&\(\)\=\?\\\/\.-])*)?\<\/\s*(?<tag>h[0-6])\s*\>/
+                CONTENT = /\<(?<tag>h[1-6])\s*(?<attr>(\w+(\=(\"|\')(\w|\s)*(\"|\'))*\s*)*)\>(?<content>(\w|\s|\d|\n|[\!\"\#\&\(\)\=\?\\\/\.-])*)?\<\/\s*(?<tag>h[0-6])\s*\>/
 
                 def matches(ext)
                     ext =~ /^\.html$/i

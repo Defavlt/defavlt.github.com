@@ -1,0 +1,29 @@
+$width: 60%;
+
+html {
+    body {
+
+        margin: 0;
+        header {
+            nav {
+                background: #DDD;
+                a {
+                    font: {
+                        family: "Droid Sans";
+                        weight: bold;
+                    }
+        
+                    display: inline-block;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    padding: 1em;
+                }
+            }
+        }
+
+        article {
+            & > *:not(:first-child) {
+            }
+        }
+    }
+}

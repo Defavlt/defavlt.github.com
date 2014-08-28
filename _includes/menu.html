@@ -2,6 +2,8 @@
 	<nav>
 		{% assign postCount = (site.posts | size | downcase) %}
 		
+		<a href="{{ site.url }}">home</a>
+
 		{% if page.title == "home" %}
 			<a href="{{ site.url }}/{{ postCount | remove: ' ' }}/">latest</a>
 		{% else %}
@@ -46,7 +48,6 @@
 			
 			{% endif %}
 			
-			<a href="{{ site.url }}">home</a>
 			
 		{% endif %}
 	</nav>
