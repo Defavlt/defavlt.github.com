@@ -1,0 +1,60 @@
+==================================================================
+https://keybase.io/defavlt
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://defav.lt
+  * I am defavlt (https://keybase.io/defavlt) on keybase.
+  * I have a public key with fingerprint B826 3C64 E9E4 437D CDCE  D970 B141 7119 2AA7 7B3B
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "b8263c64e9e4437dcdced970b14171192aa77b3b",
+            "host": "keybase.io",
+            "key_id": "b14171192aa77b3b",
+            "kid": "0111a57aab75895552a3f05d3d3561baf842b300b14edeea2c2d3db71a961ae683100a",
+            "uid": "4dc9bbc7b7cfff95be178ddb8da70f19",
+            "username": "defavlt"
+        },
+        "service": {
+            "hostname": "defav.lt",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1424346200,
+    "expire_in": 157680000,
+    "prev": "64e34a746726cf7af2b0dd82195ffefd4fc287b6d9f21cf6dcb0dd912cd8f98b",
+    "seqno": 8,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1.4.7 (MingW32)
+
+owFlkjuLFEEUhWd3EEFYZDMNrUSQcan3YxwUwViTNTEZ6nFrttixu7e7t3UZ1lDM
+NBbUSAQzMTExMFYz/Qc+YhMjA6sGBcGoqXO/c6rqVD/aGo82t19dPTh74cXq0sb7
+dzM32v36YVghV4cjNF2hfVh/YqoW0DZtqno0RU5TybzkYIBzpoIPHoJR2BFOFCGG
+WquUYw5N0F7dFUeOcbaDnVRnLS/mKZSc//n99QATQqxQ1joltBFCUMsiFoEFJiRx
+NmpOHcNlQwgAlnqaZ04RaySxIDUjGNscd7iO48Eb57xyyscYjXBAlA7B6WAVjsQU
+sIO2srch0wGiHZY9Op6gLA7JQ2mgXORfYCcTE9S0dV/7epnVvb5vpsXUHzWFugNu
+/sc/d6kKucFsGKDtUl2hKcmk71MJJJxyxiXFeILgbpNamKdCCCU1xkVtWhhyZG6c
+cau4VFT6qGykDoegKTEiRoiBR0+1cjKYSImPMvgyN4T6oKPRpd8ODqoaTXU+pl3k
+yC4tKtsftoCOTz24Mj6xfv6/P8T25vmTo2c33j60v36e25Wnn7y8fuve/S/Xtm6O
+nl58PuOz5es39bfLn8+MH298+v7xx28=
+=36Uc
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/defavlt
+
+==================================================================
