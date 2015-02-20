@@ -1,11 +1,97 @@
-html body {
-  margin: 0; }
-  html body header nav {
-    background: #DDD; }
-    html body header nav a {
-      font-family: "Droid Sans";
-      font-weight: bold;
-      display: inline-block;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 1em; }
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg); }
+  to {
+    -webkit-filter: hue-rotate(-360deg); } }
+body {
+  margin: 0;
+  padding: 0; }
+  body, body > article, body > header, body > footer {
+    width: 100%; }
+  @media (max-width: 304px) {
+    body > header > nav,
+    body > article > *,
+    body > article > pre > code {
+      margin: 0 auto;
+      width: 243.2px; } }
+  @media (min-width: 304px) and (max-width: 608px) {
+    body > header > nav,
+    body > article > *,
+    body > article > pre > code {
+      margin: 0 auto;
+      width: 243.2px; } }
+  @media (min-width: 608px) and (max-width: 912px) {
+    body > header > nav,
+    body > article > *,
+    body > article > pre > code {
+      margin: 0 auto;
+      width: 486.4px; } }
+  @media (min-width: 912px) {
+    body > header > nav,
+    body > article > *,
+    body > article > pre > code {
+      margin: 0 auto;
+      width: 729.6px; } }
+  body > article > pre {
+    width: 100% !important;
+    background: #000; }
+
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg); }
+  to {
+    -webkit-filter: hue-rotate(-360deg); } }
+body {
+  background: #FFF;
+  font-size: 1.2em;
+  color: #191919;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-smoothing: antialiased; }
+
+body > article:only-child > h1,
+body > article:first-of-type > h1 {
+  text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  color: #F35626;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-linear-gradient(92deg, #F35626, #FEAB3A);
+  background-image: -moz-linear-gradient(92deg, #F35626, #FEAB3A);
+  animation: hue 60s infinite linear; }
+
+h1 {
+  font-size: 5em;
+  font-weight: 100;
+  text-align: center; }
+  h1, h1 > a {
+    text-decoration: none;
+    color: #000; }
+  h1 > a {
+    font-weight: inherit; }
+
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg); }
+  to {
+    -webkit-filter: hue-rotate(-360deg); } }
+header nav a {
+  border-radius: 4px 4px 4px 4px;
+  border: 2px solid #000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: inline-block;
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 0.75em 1.5em; }
+
+@keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg); }
+  to {
+    -webkit-filter: hue-rotate(-360deg); } }
+
+/*# sourceMappingURL=root.css.map */

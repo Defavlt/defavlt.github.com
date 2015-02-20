@@ -10,10 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="" />
 
-    <link rel="stylesheet" type="text/css" href="http://defav.lt/css/root.css" media="screen" />
-    <script type="text/javascript" src="http://defav.lt/js/prefixfree.min.js"></script>
+    <link data-noprefix href='//fonts.googleapis.com/css?family=Roboto:700,400italic,100,400,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css' />
+    <link data-noprefix href='//raw.github.com/daneden/animate.css/master/animate.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="http://localhost:4000/css/root.css" media="screen" />
+    <script type="text/javascript" src="http://localhost:4000/js/prefixfree.min.js"></script>
 
-    <link rel="stylesheet" href="//yandex.st/highlightjs/8.0/styles/tomorrow-night-bright.min.css">
+    <link href="//yandex.st/highlightjs/8.0/styles/tomorrow-night-bright.min.css" rel="stylesheet" type="text/css" />
 
     <title>Structuring a jekyll theme</title>
   </head>
@@ -27,7 +29,7 @@
 	<nav>
 		
 		
-		<a href="http://defav.lt">home</a>
+		<a href="http://localhost:4000">home</a>
 
 		
 			
@@ -43,6 +45,10 @@
 				
 			
 				
+				
+				
+			
+				
 					
 					
 
@@ -54,8 +60,8 @@
 				
 				
 			
-				<a title="" href="http://defav.lt/1/">previous</a>
-				<a title="" href="http://defav.lt/3/">next</a>
+				<a title="" href="http://localhost:4000/1/">previous</a>
+				<a title="" href="http://localhost:4000/3/">next</a>
 			
 			
 			
@@ -68,17 +74,16 @@
 	<article>
 	
 	
-	<h1 >
+    
+    <h1 >
 		
 			Structuring a jekyll theme
 		
 </h1>
 	
-<p>
-	How to plan for and use a structure for your theme
-</p>
 
-	
+
+
 	<ol>
 <li><a href="#Index-file">Index file</a></li>
 <li><a href="#Posts">Posts</a></li>
@@ -206,6 +211,8 @@ Finally, since we don't assign anything to <code>link</code>, we won't get our <
 <ul>
 
     
+
+    
         <li><a href="/4/" title="Building a plugin for Jekyll">Building a plugin for Jekyll</a></li>    
     
 
@@ -225,10 +232,11 @@ Finally, since we don't assign anything to <code>link</code>, we won't get our <
 
 
 </article>
+
 	
       <script type="text/javascript" src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
       <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-      <script type="text/javascript" src="http://defav.lt/js/root.js"></script>
+      <script type="text/javascript" src="http://localhost:4000/js/root.js"></script>
 
       <script type="text/javascript">
         if (hljs !== undefined)
