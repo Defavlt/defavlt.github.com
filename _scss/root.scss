@@ -115,7 +115,7 @@ html {
 			border-top: 1px solid $notice1;
 		}
 
-		> footer section.preview h1 {
+		h1.preview {
 			$footer_padding: 0.5em;
 			@include padding($footer_padding, $footer_padding, $footer_padding, $footer_padding);
 
@@ -151,7 +151,8 @@ html {
 
 		article,
 		> header > nav,
-		> footer section.preview {
+		> footer section.preview,
+		h1.preview {
 
 			@include mediaq-min($desktop + 1, 0.4) {
 				font-size: 18px;
