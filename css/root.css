@@ -14,13 +14,13 @@ html {
 * > a:focus {
   color: inherit; }
 
-* h1 > a {
+* > a {
   color: #FFCC00; }
-* h1 > a:hover {
+* > a:hover {
   color: #FFCC00; }
-* h1 > a:active {
+* > a:active {
   color: #FFCC00; }
-* h1 > a:focus {
+* > a:focus {
   color: #FFCC00; }
 
 * h2 > a,
@@ -64,13 +64,13 @@ html {
 * > a:focus {
   color: inherit; }
 
-* h1 > a {
+* > a {
   color: #FFCC00; }
-* h1 > a:hover {
+* > a:hover {
   color: #FFCC00; }
-* h1 > a:active {
+* > a:active {
   color: #FFCC00; }
-* h1 > a:focus {
+* > a:focus {
   color: #FFCC00; }
 
 * h2 > a,
@@ -170,40 +170,41 @@ html {
               border-top: 0.2em #FFCC00 solid; }
             html body > header > nav > ul > li > a:active {
               text-decoration: none;
-              color: #FFCC00; }
+              color: #333333; }
             html body > header > nav > ul > li > a:focus {
               text-decoration: none;
-              color: #FFCC00; }
+              color: #333333; }
     html body > footer {
       border-top: 1px solid #FF995E; }
-    html body > footer section.preview h1 {
+    html body h1.preview {
       padding-left: 0.5em;
       padding-top: 0.5em;
       padding-right: 0.5em;
       padding-bottom: 0.5em; }
-      html body > footer section.preview h1 a span.next-up,
-      html body > footer section.preview h1 a span.summary,
-      html body > footer section.preview h1 > span span.next-up,
-      html body > footer section.preview h1 > span span.summary {
+      html body h1.preview a span.next-up,
+      html body h1.preview a span.summary,
+      html body h1.preview > span span.next-up,
+      html body h1.preview > span span.summary {
         font-size: 16px; }
-      html body > footer section.preview h1 a span.next-up,
-      html body > footer section.preview h1 a span.title,
-      html body > footer section.preview h1 a span.summary,
-      html body > footer section.preview h1 > span span.next-up,
-      html body > footer section.preview h1 > span span.title,
-      html body > footer section.preview h1 > span span.summary {
+      html body h1.preview a span.next-up,
+      html body h1.preview a span.title,
+      html body h1.preview a span.summary,
+      html body h1.preview > span span.next-up,
+      html body h1.preview > span span.title,
+      html body h1.preview > span span.summary {
         display: block; }
-      html body > footer section.preview h1:hover a,
-      html body > footer section.preview h1:hover > a.title,
-      html body > footer section.preview h1:hover > span.title {
+      html body h1.preview:hover a,
+      html body h1.preview:hover > a.title,
+      html body h1.preview:hover > span.title {
         color: #FFCC00; }
-      html body > footer section.preview h1:hover > a > span.title,
-      html body > footer section.preview h1:hover > span > span.title {
+      html body h1.preview:hover > a > span.title,
+      html body h1.preview:hover > span > span.title {
         text-decoration: underline; }
     @media screen and (min-width: 81em) {
       html body article,
       html body > header > nav,
-      html body > footer section.preview {
+      html body > footer section.preview,
+      html body h1.preview {
         font-size: 18px;
         width: 48.6em;
         margin-left: 16.2em;
@@ -211,7 +212,8 @@ html {
     @media screen and (max-width: 80em) {
       html body article,
       html body > header > nav,
-      html body > footer section.preview {
+      html body > footer section.preview,
+      html body h1.preview {
         font-size: 16px;
         width: 48em;
         margin-left: 16em;
@@ -219,7 +221,8 @@ html {
     @media screen and (max-width: 16em) {
       html body article,
       html body > header > nav,
-      html body > footer section.preview {
+      html body > footer section.preview,
+      html body h1.preview {
         padding: 1em;
         font-size: 14px; } }
     html body article {

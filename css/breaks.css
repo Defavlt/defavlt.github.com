@@ -14,13 +14,13 @@ html {
 * > a:focus {
   color: inherit; }
 
-* h1 > a {
+* > a {
   color: #FFCC00; }
-* h1 > a:hover {
+* > a:hover {
   color: #FFCC00; }
-* h1 > a:active {
+* > a:active {
   color: #FFCC00; }
-* h1 > a:focus {
+* > a:focus {
   color: #FFCC00; }
 
 * h2 > a,
