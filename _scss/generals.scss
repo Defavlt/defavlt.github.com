@@ -37,7 +37,7 @@ html {
 	@include link-all(inherit, inherit, inherit, inherit);
 }
 
-* h1 {
+* {
 	@include link-all($notice0, $notice0, $notice0, $notice0);
 }
 
