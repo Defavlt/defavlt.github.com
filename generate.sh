@@ -21,7 +21,7 @@ then
 fi
 
 cd "$OUTPUT"
-git co "$OUTPUT_BRANCH"
+git checkout "$OUTPUT_BRANCH"
 
 rm -rf "$OUTPUT"/!(.git|.gitignore|..|.)
  
