@@ -1,3 +1,6 @@
 {% include header.html %}
-	{% include index.html %}
+	{% for post in site.posts | reversed %}
+		{% assign preview_custom_announcement = "" %}
+		{% include preview.html %}
+	{% endfor %}
 {% include footer.html %}
