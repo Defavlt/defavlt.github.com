@@ -1,11 +1,26 @@
-<h1 {% if single %} id="top" {% endif %}>
-		{% if link %}
-			<a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-		{% else %}
-			{{ post.title }}
-		{% endif %}
+{% assign next = 0 %}
+{% assign curr = 0 %}
+{% for p in site.posts | reversed %}
+	{% assign next = curr %}
+	{% assign curr = p %}
+
+	{% if p.url == page.url %}
+		{% break %}
+	{% endif %}
+{% endfor %}
+
+<h1>
+	{% if next != 0 %}
+		<a title="{{ next.summary }}" href="{{ next.url }}">
+			<span class="next-up">Next up...</span>
+			<span class="title">{{ next.title }}</span>
+			<span class="summary">{{ next.summary }}</span>
+		</a>
+	{% elsif page.preview == "true" %}
+		<a title="{{ page.preview_summary }}" href="{{ page.preview_link }}">
+			<span class="next-up">Next up... {{ page.preview }} </span>
+			<span class="title">{{ page.preview_title }}</span>
+			<span class="summary">{{ page.preview_summary }}</span>
+		</span>
+	{% endif %}
 </h1>
-	
-<p>
-	{{ post.summary }}
-</p>
