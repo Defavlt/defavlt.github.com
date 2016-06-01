@@ -1,8 +1,10 @@
 
 	<footer>
-		<section class="preview">
-			{% include preview.html %}
-		<section>
+		{% if preview %}
+			<section class="preview">
+				{% include preview.html %}
+			<section>
+		{% endif %}
 
 		{% comment %}
 		<section>
