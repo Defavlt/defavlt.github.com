@@ -13,4 +13,4 @@ permalink: /:title/
 pygments: false
 exclude: [generate.sh]
 gems:
- - jekyll-redirect-from
+ - jekyll-redirect-from - jekyll-paginate
