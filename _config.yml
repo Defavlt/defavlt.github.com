@@ -12,3 +12,5 @@ markdown: rdiscount
 permalink: /:title/
 pygments: false
 exclude: [generate.sh]
+gems:
+ - jekyll-redirect-from
