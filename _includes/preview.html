@@ -4,21 +4,29 @@
 	{% assign next = curr %}
 	{% assign curr = p %}
 
-	{% if p.url == page.url %}
+	{% if p.url == page.url or post.url == p.url %}
 		{% break %}
 	{% endif %}
 {% endfor %}
 
-<h1>
+<h1 class="preview">
 	{% if next != 0 %}
 		<a title="{{ next.summary }}" href="{{ next.url }}">
-			<span class="next-up">Next up...</span>
+			{% if preview_custom_announcement %}
+				<span class="next-up">{{ preview_custom_announcement }}</span>
+			{% else %}
+				<span class="next-up">Next up...</span>
+			{% endif %}
 			<span class="title">{{ next.title }}</span>
 			<span class="summary">{{ next.summary }}</span>
 		</a>
 	{% elsif page.preview == "true" %}
 		<a title="{{ page.preview_summary }}" href="{{ page.preview_link }}">
-			<span class="next-up">Next up... {{ page.preview }} </span>
+			{% if preview_custom_announcement %}
+				<span class="next-up">{{ preview_custom_announcement }}</span>
+			{% else %}
+				<span class="next-up">Next up...</span>
+			{% endif %}
 			<span class="title">{{ page.preview_title }}</span>
 			<span class="summary">{{ page.preview_summary }}</span>
 		</span>
