@@ -1,29 +1,188 @@
+@import 'colours';
+@import 'sizes';
+@import 'breaks';
+
+@import 'generals';
+
 $width: 60%;
 
 html {
+	background: $background;
+
+	padding: 0px;
+	margin: 0px;
+
     body {
 
-        margin: 0;
-        header {
-            nav {
-                background: #DDD;
-                a {
-                    font: {
-                        family: "Droid Sans";
-                        weight: bold;
-                    }
-        
-                    display: inline-block;
-                    text-transform: uppercase;
-                    text-decoration: none;
-                    padding: 1em;
-                }
-            }
-        }
+		padding: 0px;
+		margin: 0px;
 
-        article {
-            & > *:not(:first-child) {
-            }
-        }
+		@include mediaq-min($desktop + 1, 0.4) {
+			font-size: 18px;
+		}
+
+		@include mediaq-max($desktop, 0.4) {
+			font-size: 16px;
+		}
+
+		@include mediaq-max($handheld, 0) {
+			font-size: 14px;
+		}
+
+		$headerBorderTop: 0.25;
+
+		> header {
+			@include padding(0, 0, 0, 0);
+
+			border-top: ($headerBorderTop + em) $notice0 solid;
+			border-bottom: 1px #404040 solid;
+			color: $notice0;
+			background: $background;
+
+			font: {
+				family: "PT Serif", serif;
+			}
+
+			> nav {
+				@include padding("", 0, "", 0);
+
+				> ul {
+					@include margin(0, 0, 0, 0);
+					@include padding(0, 0, 0, 0);
+
+					list-style-type: none;
+					list-style-image: none;
+
+					> li {
+						display: inline;
+
+						$padding: 0.5;
+						$border: 0.2;
+
+						&.previous {
+							float: right;
+
+							> a::before {
+								content: "\00ab  ";
+							}
+						}
+
+						&.next {
+							float: right;
+
+							> a::after {
+								content: " \00bb ";
+							}
+						}
+
+						> a {
+							@include padding($padding + em, 0, $padding + em, 4px);
+							@include margin(0, 0, 0, 0);
+
+							color: $notice0;
+							font-size: 1.2em;
+							font-weight: lighter;
+							font-style: italic;
+
+							display: inline-block;
+							border-top: ($border + em) $background solid;
+							//border-bottom: ($border + em) $background solid;
+						}
+
+						> a:hover {
+							text-decoration: none;
+							background: $notice0;
+							color: $background;
+
+							border-top: ($border + em) $notice0 solid;
+						}
+
+						> a:active {
+							text-decoration: none;
+							color: $notice0;
+						}
+
+						> a:focus {
+							text-decoration: none;
+							color: $notice0;
+						}
+					}
+				}
+			}
+		}
+
+		> footer {
+			border-top: 1px solid $notice1;
+		}
+
+		> footer section.preview h1 {
+			$footer_padding: 0.5em;
+			@include padding($footer_padding, $footer_padding, $footer_padding, $footer_padding);
+
+			a,
+			> span {
+				span.next-up,
+				span.summary {
+					font-size: $normal;
+				}
+
+				span.next-up,
+				span.title,
+				span.summary {
+					display: block;
+				}
+			}
+
+			&:hover {
+				a,
+				> a.title,
+				> span.title {
+					color: $notice0;
+				}
+
+				> a > span,
+				> span > span {
+					&.title {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		article,
+		> header > nav,
+		> footer section.preview {
+
+			@include mediaq-min($desktop + 1, 0.4) {
+				font-size: 18px;
+				width: $width + em;
+
+				$gutter_h: ($gutter * 0.5) + em;
+				@include margin($gutter_h, "", $gutter_h, "");
+			}
+
+			@include mediaq-max($desktop, 0.4) {
+				font-size: 16px;
+				width: $width + em;
+
+				$gutter_h: ($gutter * 0.5) + em;
+				@include margin($gutter_h, "", $gutter_h, "");
+			}
+
+			@include mediaq-max($handheld, 0) {
+				padding: 1em;
+				font-size: 14px;
+			}
+		}
+
+		article {
+			margin-bottom: 2em;
+
+			pre {
+				code {
+					overflow-x: scroll;
+				}
+			}
+		}
     }
 }

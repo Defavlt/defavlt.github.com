@@ -1,11 +1,49 @@
-* {
-  font-size: 16px;
-  text-decoration: none;
-  color: #000;
+@import 'colours';
+@import 'sizes';
 
-  font: {
-      family: "Open Sans", sans-serif;
-  }
+@mixin link-all ($normal, $hover, $active, $focus) {
+	> a 		{ @content; color: $normal; }
+	> a:hover 	{ @content; color: $hover; }
+	> a:active	{ @content; color: $active; }
+	> a:focus	{ @content; color: $focus; }
+}
+
+@mixin padding ($l:"", $u:"", $r:"", $d:"") {
+	@if $l != "" { padding-left: $l; }
+	@if $u != "" { padding-top: $u; }
+	@if $r != "" { padding-right: $r; }
+	@if $d != "" { padding-bottom: $d; }
+}
+
+@mixin margin ($l:"", $u:"", $r:"", $d:"") {
+	@if $l != "" { margin-left: $l; }
+	@if $u != "" { margin-top: $u; }
+	@if $r != "" { margin-right: $r; }
+	@if $d != "" { margin-bottom: $d; }
+}
+
+html {
+	font-size: $normal;
+	text-decoration: none;
+	color: $foreground;
+	background-color: $background;
+
+	font: {
+		family: "Open Sans", sans-serif;
+	}
+}
+
+* {
+	@include link-all(inherit, inherit, inherit, inherit);
+}
+
+* h1 {
+	@include link-all($notice0, $notice0, $notice0, $notice0);
+}
+
+* h2,
+* h3 {
+	@include link-all($foreground, $foreground, $foreground, $foreground);
 }
 
 * a,
@@ -13,5 +51,11 @@
 * a:active,
 * a:focus{
   text-decoration: none;
-  color: inherit;
+  color: $notice0;
+}
+
+* a:hover,
+* a:active,
+* a:focus {
+	text-decoration: underline;
 }

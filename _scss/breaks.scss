@@ -1,0 +1,27 @@
+@import 'generals';
+
+$normalbreak: 1;
+
+$desktop: $normalbreak * 80; //1440
+$tablet: $desktop / 2;
+$handheld: $desktop / 5;
+
+$size: $normalbreak !default;
+
+@mixin mediaq-max($break, $gutterf, $unit:"em") {
+	$gutter: $break * $gutterf !global;
+	$width: ($break - $gutter) !global;
+
+	@media screen and (max-width: ($break + $unit)) {
+		@content;
+	}
+}
+
+@mixin mediaq-min($break, $gutterf, $unit:"em") {
+	$gutter: $break * $gutterf !global;
+	$width: ($break - $gutter) !global;
+
+	@media screen and (min-width: ($break + $unit)) {
+		@content;
+	}
+}
