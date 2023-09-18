@@ -3,7 +3,7 @@
     font-style: normal;
     src: 
         local("OpenSans"),
-        url("/webfonts/OpenSans-VariableFont_wdth,wght.ttf");
+        url("/cv/webfonts/OpenSans-VariableFont_wdth,wght.ttf");
 }
 
 @font-face {
@@ -11,5 +11,5 @@
     font-style: italic;
     src: 
         local("OpenSans"),
-        url("/webfonts/OpenSans-Italic-VariableFont_wdth,wght.ttf");
+        url("/cv/webfonts/OpenSans-Italic-VariableFont_wdth,wght.ttf");
 }
