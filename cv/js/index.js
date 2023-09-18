@@ -1,8 +1,8 @@
 import Mustache from "./mustache.js";
 
-console.data = fetch("/data/experience.json")
+console.data = fetch("data/experience.json")
 .then(async (data) => {
-    fetch("/templates/experience.template.html")
+    fetch("templates/experience.template.html")
     .then(async (template) => {
         const rendered = Mustache.render(await template.text(), await data.json());
         const el = document.createElement("div");
