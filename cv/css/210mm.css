@@ -1,0 +1,43 @@
+@media print, screen and (min-width: 209mm) {
+    /******************/
+    /* Page specifics */
+
+    .sibling {
+        display: inline-block;
+    }
+
+    #profile > .card {
+        max-width: 30em;
+    }
+
+    body {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header {
+        padding: 1.5em;
+        min-height: 5em;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        row-gap: 1em;
+        column-gap: 2em;
+    }
+
+    main article:nth-child(even) {
+        grid-column: 2;
+    }
+
+    main article:nth-child(odd) {
+        grid-column: 1;
+    }
+
+    main article#profile 
+
+    main article#experience {
+        max-width: 30em;
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "experiences": [
+        {
+            "position": "Service Desk Agent",
+            "company": "CircleK",
+            "date": "2022-2023",
+            "description": "Incident troubleshooting, categorization, and resolution, as well as documentation of discovered solutions. Adherence to internal and external KPI's."
+        },
+        {
+            "position": "Subject Matter Expert",
+            "date": "2022",
+            "company": "Wipro IT Services",
+            "description": "Backlog incident categorisation and dispatch, production issue resolution, and production report generation, as well as automation and generalization of the most used reports using MS Power BI, Excel, and in-project tools (Service Now, Avaya, Amazon Connect, etc.)"
+        },
+        {
+            "position": "Service Desk Agent",
+            "date": "2021-2022",
+            "company": "Wipro IT Services",
+            "description": "Incident troubleshooting, categorization, and resolution, as well as documentation of discovered solutions. Adherence to internal and external KPI's."
+        },
+        {
+            "position": "Content Manager",
+            "date": "2020-2021",
+            "company": "KPAX Marketing",
+            "description": "Management, and publishing of content received from copy writers, and translators, as well as development of technical solutions for better management of content."
+        },
+        {
+            "position": "Customer Service Agent",
+            "date": "2019-2020",
+            "company": "KPAX Marketing",
+            "description": "Resolving customer complaints, queries and questions."
+        },
+        {
+            "position": "Customer Service Agent",
+            "date": "2019",
+            "company": "Teleperformance Hellas",
+            "description": "Aftermarket support for a range of devices, such as satellite receivers, android units, etc."
+        },
+        {
+            "position": "Line chef",
+            "date": "2017-2019",
+            "company": "Kalmar Municipality",
+            "description": "Preparation of food, planning produce purchases, hygienic tasks."
+        },
+        {
+            "position": "Consultant",
+            "date": "2014-2017",
+            "company": "Self-employed",
+            "description": "Maintenance of client databases (MySQL, MSSQL) and development of backend systems; such as softphone integration (Avaya), automation of existing processes, and occasionally development of wholly new products."
+        },
+        {
+            "position": "Support technician",
+            "date": "2011-2012",
+            "company": "K2C in Sweden",
+            "description": "Maintenance of existing products and systems, incident resolution, bug fixing of internal systems, and development of public-facing websites."
+        }
+    ]
+}

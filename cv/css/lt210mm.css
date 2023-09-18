@@ -1,0 +1,23 @@
+@media screen and (max-width: 209mm) {
+
+    .fl { float: none; margin-top: 2em; margin-bottom: 2em; }
+    .fr { float: none; margin-top: 2em; margin-bottom: 2em; }
+
+    .card.sibling {
+        display: block;
+    }
+
+    .card.fr {
+        display: block;
+        float: none;
+    }
+
+    .card .well .details {
+        padding-left: 0.25em;
+    }
+
+    /* Page specifics */
+    .profile {
+        height: auto;
+    }
+}
