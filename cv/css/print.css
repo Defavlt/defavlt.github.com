@@ -1,5 +1,54 @@
 @media print {
-    footer {
-        display: none;
+    .card.description {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    body p {
+        font-size: 0.5em;
+        margin-block-end: 0.25em;
+    }
+
+    body a,
+    a.branded-link {
+        font-size: 0.5em;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    h2 {
+        margin-bottom: 0.5em;
+    }
+
+    .well {
+        /*padding-bottom: 0.25em;*/
+        border-bottom: 1px solid #000;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+    }
+
+    .well .header {
+        color: var(--ccolor);
+    }
+
+    .well .header {
+        font-size: 0.75em;
+        background-color: unset;
+        
+    }
+
+    .card .well .details { 
+        padding: 0; 
+    }
+
+    .card .description {
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+    }
+
+    .card .well .details {
+        padding-bottom: 0em;
     }
 }

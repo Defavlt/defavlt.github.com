@@ -9,6 +9,6 @@ console.data = fetch("/cv/data/experience.json")
         el.innerHTML = rendered;
 
         const profile = document.querySelector("main");
-        profile.insertBefore(el.childNodes[0], profile.lastElementChild);
+        profile.append(el.childNodes[0]);
     });
 });

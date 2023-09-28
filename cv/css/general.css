@@ -30,17 +30,27 @@
     .mb-none { margin-bottom: 0 !important; }
     .mr-none { margin-right: 0 !important; }
 
+    .ml { margin-left: 0.25em; }
+    .mt { margin-top: 0.25em; }
+    .mb { margin-bottom: 0.25em; }
+    .mr { margin-right: 0.25em; }
+
     .fl { float: left; }
     .fr { float: right; }
     .fl-always { float: left; }
     .fr-always { float: right; }
 
-    .inline-block:last-of-type {
-        display: inline-block;
+    .faded {
+        color: var(--cl4);
+        font-size: 0.75em;
+        margin-bottom: 0.5em;
+        display: block;
+        position: relative;
+        top: -0.5em;
     }
 
-    .branded-link {
-        margin-left: 5px;
+    .inline-block:last-of-type {
+        display: inline-block;
     }
 
     .description {
@@ -51,8 +61,11 @@
         line-height: 0.25em;
     }
 
-    .well .h {
-        display: block;
+    .well .header {
+        background-color: var(--ccolor);
+        color: var(--cl3);
+        padding: 0.25em;
+        font-weight: 600;
     }
 
     h1 span,
@@ -64,11 +77,6 @@
     .well .d {
         color: var(--cl4);
         font-size: small;
-    }
-
-    .well .header {
-        display: inline-block;
-
     }
 
     /* company */
@@ -92,8 +100,7 @@
     .card .well .details {
         float: right;
         padding: 0.25em 0.25em 0.25em 0.25em;
-        border-radius: 5%;;
-        margin-top: 0.25em;
+        border-radius: 5%;
     }
 
     .well .details:first-of-type {
@@ -108,8 +115,9 @@
         font-size: small;
     }
 
-    .skill {
-        display: inline-block;
+    .skill,
+    .language,
+    .education {
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -133,53 +141,32 @@
         color: var(--ccolor);
     }
 
-    a {
-        color: var(--clw2);
-    }
-
-    a:visited {
-        color: var(--clw2);
-    }
-
-    a .icon,
-    a:visited .icon {
+    .branded-link {
         color: var(--ccolor);
+        padding: 0.5em 0.25em 0.5em 0.5em;
+        margin: 0;
     }
 
-    .card ul li p {
-        display: inline-block;
-        margin: 0px;
+    a.branded-link:hover {
+        color: var(--cl3);
+        background-color: var(--ccolor);
     }
 
-    .card ul li .progress {
-        float: right;
-        max-width: 4em;
+    a.branded-link:visited:hover {
+        color: var(--cl3);
+    }
+
+    a.branded-link:visited {
+        color: var(--clw2);
+    }
+
+    .branded-link .icon,
+    a.branded-link:visited .icon {
+        color: var(--ccolor);
     }
 
     .card .description {
         padding-top: 1em;
         padding-bottom: 1em;
-    }
-
-    /******************/
-    /* Page specifics */
-    h2 {
-        margin-bottom: 1em;
-    }
-
-    #experience ol li:last-of-type .description {
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-
-    #education ol li p,
-    #education ol li h4 {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    #education ol li {
-        margin-top: 1em;
-        list-style-type: circle;
     }
 }

@@ -16,8 +16,52 @@
         padding-left: 0.25em;
     }
 
+    .well .d {
+        font-size: 0.25em;
+    }
+
     /* Page specifics */
+    header {
+        margin-bottom: 0px;
+        padding-bottom: 0.5em;
+    }
+
     .profile {
         height: auto;
+    }
+
+    a.branded-link {
+        position: relative;
+        left: -0.5em;
+    }
+
+    #education {
+        display: none;
+    }
+
+    .c1 { 
+        padding: 0.5em 0.75em 0.25em 0.75em;
+        background-color: var(--ccolor);
+    }
+    .c2 { 
+        padding: 0.25em 0.75em 0.75em 0.75em;
+        background-color: var(--ccolor);
+    }
+
+    .c1,
+    .c2 {
+        position: relative;
+        left: -1em;
+        right: 1em;
+        width: calc(100% + 1em);
+    }
+
+    .c1 *,
+    .c2 * {
+        color: var(--cl1);
+    }
+
+    h1 {
+        font-size: 1em;
     }
 }
