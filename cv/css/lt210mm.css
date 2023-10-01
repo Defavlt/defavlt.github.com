@@ -3,23 +3,6 @@
     .fl { float: none; margin-top: 2em; margin-bottom: 2em; }
     .fr { float: none; margin-top: 2em; margin-bottom: 2em; }
 
-    .card.sibling {
-        display: block;
-    }
-
-    .card.fr {
-        display: block;
-        float: none;
-    }
-
-    .card .well .details {
-        padding-left: 0.25em;
-    }
-
-    .well .d {
-        font-size: 0.25em;
-    }
-
     /* Page specifics */
     header {
         margin-bottom: 0px;
