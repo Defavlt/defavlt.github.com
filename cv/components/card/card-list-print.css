@@ -1,0 +1,10 @@
+@media print {
+    .card {
+        margin-bottom: 0;
+    }
+
+    .card .well .details {
+        padding-top: 0.5em;
+        padding-bottom: 0.25em;
+    }
+}

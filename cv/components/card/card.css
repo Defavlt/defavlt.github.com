@@ -1,0 +1,84 @@
+.card {
+    border: 0.1em solid transparent;
+    transition: border 0.1s, box-shadow 0.1s;
+}
+
+.card .well {
+    display: block;
+    padding: 0 0.25em 0 0;
+    line-height: 0.25em;
+    font-size: calc(4em / 6);
+    text-transform: capitalize;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.card .well .header {
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    border-radius: 0.1em;
+    font-weight: 600;
+    background-color: var(--ccolor);
+    color: var(--cl3);
+}
+
+.card:hover {
+    border: 0.1em solid var(--ccolor);
+    border-radius: 0.1em;
+    box-shadow: 0.1em 0.1em var(--ccolor);
+    transition: border 0.1s, box-shadow 0.8s;
+}
+
+.card:hover .well .header {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* company */
+.card .well .details:last-of-type {
+    text-transform: none;
+    margin-right: 0.5em;
+}
+
+.card .well .details:last-of-type::after {
+    content: "/";
+    margin-left: 0.5em;
+}
+
+/* date */
+.card .well .details {
+    float: right;
+    padding-top: 1em;
+    border-radius: 5%;
+    font-weight: lighter;
+}
+
+.well .details:first-of-type {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.0625em;
+    line-height: 0.5em;
+}
+
+.card .well .details:not(:first-of-type):not(:last-of-type) {
+    float: right;
+    padding-right: 0.25em;
+    background-color: #fff;
+}
+
+.well .details:not(:first-of-type) {
+    font-size: small;
+    padding-right: 0.2em;
+}
+
+.well:hover .card .description {
+    padding-right: 0;
+}
+
+.card .description {
+    padding: 0.5em 0.25em 0.5em 0.5em;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
