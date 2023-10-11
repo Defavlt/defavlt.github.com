@@ -57,62 +57,10 @@
         margin-top: 0;
     }
 
-    .well {
-        line-height: 0.25em;
-    }
-
-    .well .header {
-        background-color: var(--ccolor);
-        color: var(--cl3);
-        padding: 0.25em;
-        font-weight: 600;
-    }
-
     h1 span,
     h2 span,
     h3 span {
         line-height: 1em;
-    }
-
-    .well .d {
-        color: var(--cl4);
-        font-size: small;
-    }
-
-    /* company */
-    .well .details:last-of-type {
-        text-transform: none;
-        margin-right: 0.5em;;
-    }
-
-    .well .details:last-of-type::after {
-        content: "/";
-        margin-left: 1em;
-    }
-
-    /* date */
-    .well .details:not(:first-of-type):not(:last-of-type) {
-        float: right;
-        background-color: #fff;
-        left: 5em;
-    }
-
-    .card .well .details {
-        float: right;
-        padding: 0.25em 0.25em 0.25em 0.25em;
-        border-radius: 5%;
-    }
-
-    .well .details:first-of-type {
-        display: block;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 0.0625em;
-        line-height: 0.5em;
-    }
-
-    .well .details:not(:first-of-type) {
-        font-size: small;
     }
 
     .skill,
@@ -135,7 +83,26 @@
         background-color: var(--clw2);
     }
 
-    .well .h,
+    footer img {
+        height: 5em;
+    }
+
+    header h1 {
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.0625em;
+        line-height: 0.5em;
+    }
+
+    header h1 span:last-child {
+        line-height: 1em;
+        font-size: small;
+        font-weight: normal;
+    }
+
+    h1 { font-size: 2em; }
+
     h1, h2, h3,
     p {
         color: var(--ccolor);
@@ -165,8 +132,13 @@
         color: var(--ccolor);
     }
 
-    .card .description {
-        padding-top: 1em;
-        padding-bottom: 1em;
+    .branded-link span {
+        font-weight: normal;
+    }
+
+    a.branded-link[href=""],
+    a.branded-link[href=""] span {
+        cursor: default;
+        user-select: none;
     }
 }

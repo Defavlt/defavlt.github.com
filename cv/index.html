@@ -7,16 +7,20 @@
     <meta name="description" content="" />
     <link rel="icon" type="image/x-icon" href="/cv/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/cv/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/cv/components/card/card.css" />
+    <link rel="stylesheet" type="text/css" href="/cv/components/card/card-list.css" />
+    <link rel="stylesheet" type="text/css" href="/cv/components/card/card-list-print.css" />
 </head>
     <body>
-        <header>
-            <h1 class="well sibling mt mb">
-                <span class="details accent">Marcus Hansson</span>
-                <span class="d">Self-taught programmer from Kalmar, Sweden</span>
-            </h1>
-        </header>
-
         <main>
+            <header>
+                <h1 class="well sibling mt mb">
+                    <span class="details accent">
+                        Marcus Hansson
+                    </span>
+                    <span class="d">Self-taught programmer from Kalmar, Sweden</span>
+                </h1>
+            </header>
             <article id="about" class="article">
                 <h2 class="mt mb">About</h2>
                 <p>
@@ -118,6 +122,12 @@
                 </ol>
             </article>
         </main>
+
+        <footer>
+            <article>
+                <img src="/cv/qr.png" />
+            </article>
+        </footer>
 
         <script type="module" src="/cv/js/mustache.js"></script>
         <script type="module" src="/cv/js/index.js"></script>

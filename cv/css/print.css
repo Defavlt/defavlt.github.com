@@ -1,4 +1,25 @@
 @media print {
+
+    body {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    main {
+        margin-top: 1em;
+        row-gap: 0.1em;
+    }
+
+    footer article img {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+
+    h1 {
+        font-size: 1.75em;
+    }
+
     .card.description {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
@@ -20,6 +41,7 @@
 
     h2 {
         margin-bottom: 0.5em;
+        margin-top: 0em;
     }
 
     .well {
