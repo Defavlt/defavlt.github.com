@@ -1,8 +1,14 @@
 {
     "experiences": [
         {
+            "position": "Sabbatical",
+            "company": "N/A",
+            "date": "2024-",
+            "description": "Personal time for development and growth. On-going and open-ended."
+        },
+        {
             "position": "Service Desk Agent",
-            "company": "CGI/CircleK",
+            "company": "CGI",
             "date": "2023-2024",
             "description": "Transfer from CircleK to CGI. Training of CGI staff in CircleK best practices. Incident troubleshooting, categorization, and resolution, as well as documentation of discovered solutions. Adherence to internal and external KPI's."
         },
