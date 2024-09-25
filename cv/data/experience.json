@@ -2,6 +2,12 @@
     "experiences": [
         {
             "position": "Service Desk Agent",
+            "company": "CGI/CircleK",
+            "date": "2023-2024",
+            "description": "Transfer from CircleK to CGI. Training of CGI staff in CircleK best practices. Incident troubleshooting, categorization, and resolution, as well as documentation of discovered solutions. Adherence to internal and external KPI's."
+        },
+        {
+            "position": "Service Desk Agent",
             "company": "CircleK",
             "date": "2022-2023",
             "description": "Incident troubleshooting, categorization, and resolution, as well as documentation of discovered solutions. Adherence to internal and external KPI's."
