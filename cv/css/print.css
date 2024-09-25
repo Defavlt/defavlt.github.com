@@ -26,7 +26,7 @@
     }
 
     body p {
-        font-size: 0.5em;
+        font-size: 10px;
         margin-block-end: 0.25em;
     }
 
@@ -56,7 +56,7 @@
     }
 
     .well .header {
-        font-size: 0.75em;
+        font-size: 12px;
         background-color: unset;
         
     }
@@ -72,5 +72,9 @@
 
     .card .well .details {
         padding-bottom: 0em;
+    }
+
+    .faded {
+        display: inline;
     }
 }
