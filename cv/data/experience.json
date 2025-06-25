@@ -41,30 +41,6 @@
             "date": "2019-2020",
             "company": "KPAX Marketing",
             "description": "Resolving customer complaints, queries and questions."
-        },
-        {
-            "position": "Customer Service Agent",
-            "date": "2019-2019",
-            "company": "Teleperformance Hellas",
-            "description": "Aftermarket support for a range of devices, such as satellite receivers, android units, etc."
-        },
-        {
-            "position": "Line chef",
-            "date": "2017-2019",
-            "company": "Kalmar Municipality",
-            "description": "Preparation of food, planning produce purchases, hygienic tasks."
-        },
-        {
-            "position": "Consultant",
-            "date": "2014-2017",
-            "company": "Self-employed",
-            "description": "Maintenance of client databases (MySQL, MSSQL) and development of backend systems; such as softphone integration (Avaya), automation of existing processes, and occasionally development of wholly new products."
-        },
-        {
-            "position": "Support technician",
-            "date": "2011-2012",
-            "company": "K2C in Sweden",
-            "description": "Maintenance of existing products and systems, incident resolution, bug fixing of internal systems, and development of public-facing websites."
         }
     ]
 }
