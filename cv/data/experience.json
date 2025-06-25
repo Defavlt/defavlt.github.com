@@ -2,9 +2,9 @@
     "experiences": [
         {
             "position": "Sabbatical",
-            "company": "N/A",
-            "date": "2024-",
-            "description": "Personal time for development and growth. On-going and open-ended."
+            "company": "-",
+            "date": "2024-2025",
+            "description": "Took time to travel and complete a long-planned cross-country hike. Concurrently resumed work on libslw, a C++/Lua binding layer aimed at simplifying interaction with the Lua C API. Focused on usability, safety, and code clarity."
         },
         {
             "position": "Service Desk Agent",
